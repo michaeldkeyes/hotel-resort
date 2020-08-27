@@ -1,32 +1,69 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+    <Navbar />
     <router-view />
   </div>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+<script>
+import Navbar from "./components/Navbar";
+
+export default {
+  components: {
+    Navbar
+  }
+};
+</script>
+
+<style lang="scss">
+@import "variables.scss";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-#nav {
-  padding: 30px;
+body {
+  background: $mainWhite;
+  color: $mainBlack;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  line-height: 1.4;
+  padding-top: 66px;
 }
 
-#nav a {
+h1 {
+  font-size: 3rem;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+  line-height: 1.25;
+  margin-bottom: 1.25rem;
+}
+
+h5 {
+  font-size: 1rem;
   font-weight: bold;
-  color: #2c3e50;
+  margin-bottom: 1.5rem;
 }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
+h6 {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
 }
 </style>
