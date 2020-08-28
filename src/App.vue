@@ -66,4 +66,22 @@ h6 {
   font-weight: bold;
   margin-bottom: 1.5rem;
 }
+
+.btn-primary {
+  background: $primaryColor;
+  border: 3px solid $primaryColor;
+  color: $mainBlack;
+  cursor: pointer;
+  display: inline-block;
+  letter-spacing: $mainSpacing;
+  padding: 0.4rem 0.9rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: $mainTransition;
+
+  &:hover {
+    background: transparent;
+    color: $primaryColor;
+  }
+}
 </style>

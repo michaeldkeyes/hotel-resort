@@ -1,11 +1,18 @@
-import Vue from "vue";
-import Vuex from "vuex";
+/* eslint-disable */
+import Vue from 'vue';
+import Vuex from 'vuex';
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-  state: {},
+  state: {
+    rooms: [],
+    sortedRooms: [],
+    featurdRooms: [],
+    loading: true,
+  },
+  getters: {},
   mutations: {},
   actions: {},
-  modules: {}
+  modules: {},
 });

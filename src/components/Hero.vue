@@ -1,5 +1,7 @@
 <template>
-  <header :class="hero"></header>
+  <header :class="hero">
+    <slot></slot>
+  </header>
 </template>
 
 <script>
