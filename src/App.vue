@@ -7,10 +7,31 @@
 
 <script>
 import Navbar from "./components/Navbar";
+import items from "./data";
 
 export default {
   components: {
     Navbar
+  },
+  created: function() {
+    let tempItems = items.map(item => {
+      let id = item.sys.id;
+      let images = [];
+      item.fields.images.map(image => {
+        images.push(image.fields.file.url);
+      });
+      let room = { ...item.fields, images, id };
+      return room;
+    });
+    this.$store.commit("setRooms", tempItems);
+    this.$store.commit("setSortedRooms", tempItems);
+    this.$store.commit("setLoading", false);
+
+    let maxPrice = Math.max(...tempItems.map(item => item.price));
+    let maxSize = Math.max(...tempItems.map(item => item.size));
+    this.$store.commit("updatePrice", maxPrice);
+    this.$store.commit("setMaxPrice", maxPrice);
+    this.$store.commit("setMaxSize", maxSize);
   }
 };
 </script>
@@ -83,5 +104,19 @@ h6 {
     background: transparent;
     color: $primaryColor;
   }
+}
+
+.error {
+  margin: 2rem 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.empty-search {
+  letter-spacing: $mainSpacing;
+  margin: 2rem 0;
+  padding: 1rem;
+  text-align: center;
+  text-transform: capitalize;
 }
 </style>

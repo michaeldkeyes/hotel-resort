@@ -1,17 +1,18 @@
 /* eslint-disable */
 
-import Vue from 'vue';
-import VueRouter from 'vue-router';
-import Home from '../views/Home.vue';
-import Rooms from '../views/Rooms.vue';
-import Error from '../views/Error.vue';
+import Vue from "vue";
+import VueRouter from "vue-router";
+import Home from "../views/Home.vue";
+import Rooms from "../views/Rooms.vue";
+import Error from "../views/Error.vue";
+import SingleRoom from "../views/SingleRoom";
 
 Vue.use(VueRouter);
 
 const routes = [
   {
-    path: '/',
-    name: 'Home',
+    path: "/",
+    name: "Home",
     component: Home,
   } /*
   {
@@ -24,19 +25,25 @@ const routes = [
       import(/* webpackChunkName: "about"  '../views/About.vue'),
   },*/,
   {
-    path: '/rooms',
-    name: 'Rooms',
+    path: "/rooms",
+    name: "Rooms",
     component: Rooms,
   },
   {
-    path: '*',
-    name: 'Error',
+    path: "/rooms/:slug",
+    name: "SingleRoom",
+    props: true,
+    component: SingleRoom,
+  },
+  {
+    path: "*",
+    name: "Error",
     component: Error,
   },
 ];
 
 const router = new VueRouter({
-  mode: 'history',
+  mode: "history",
   base: process.env.BASE_URL,
   routes,
 });

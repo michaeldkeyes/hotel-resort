@@ -1,5 +1,5 @@
 <template>
-  <header :class="hero">
+  <header :class="hero" :style="{ background: img() }">
     <slot></slot>
   </header>
 </template>
@@ -8,10 +8,17 @@
 export default {
   name: "Hero",
   props: {
-    children: String,
     hero: {
       type: String,
       default: "defaultHero"
+    },
+    image: String
+  },
+  methods: {
+    img() {
+      if (this.image) {
+        return `url(${this.image}) center/cover no-repeat`;
+      }
     }
   }
 };

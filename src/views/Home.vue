@@ -2,7 +2,9 @@
   <div>
     <Hero>
       <Banner title="luxurious rooms" subtitle="deluxe rooms starting at $299">
-        <router-link class="btn-primary" to="/rooms">our rooms</router-link>
+        <router-link class="btn-primary" :to="{ name: 'Rooms' }"
+          >our rooms</router-link
+        >
       </Banner>
     </Hero>
     <Services />

@@ -3,7 +3,7 @@
     <nav class="navbar">
       <div class="nav-center">
         <div class="nav-header">
-          <router-link to="/">
+          <router-link :to="{ name: 'Home' }">
             <img src="@/assets/logo.svg" alt="Beach Resort" />
           </router-link>
           <button class="nav-btn" type="button" @click="handleToggle">
@@ -12,10 +12,10 @@
         </div>
         <ul :class="[isOpen ? 'nav-links show-nav' : 'nav-links']">
           <li>
-            <router-link to="/">Home</router-link>
+            <router-link :to="{ name: 'Home' }">Home</router-link>
           </li>
           <li>
-            <router-link to="/rooms">Rooms</router-link>
+            <router-link :to="{ name: 'Rooms' }">Rooms</router-link>
           </li>
         </ul>
       </div>
