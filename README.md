@@ -1,3 +1,5 @@
 # Hotel Resort
 
-Resort website made with Vue and Vue Router that uses contentful for backend
+Resort website made with Vue and Vue Router
+
+https://michaeldkeyes.github.io/hotel-resort/
