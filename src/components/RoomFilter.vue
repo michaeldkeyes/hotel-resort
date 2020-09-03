@@ -70,7 +70,7 @@
           />
         </div>
       </div>
-      <div class="form">
+      <div class="form-group">
         <div class="single-extra">
           <input
             type="checkbox"
